@@ -39,14 +39,20 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
+  - This wasn't one of the 3 issues I discovered, but it looks like it could feel like it keeps changing because of lines 170-173 in `app.py`: on even-numbered attempts, the game compares your guess (an integer) against the secret converted to a string. Because Python compares strings and integers differently (e.g., 5 > "5" raises a TypeError, and string comparison like "9" > "10" is alphabetical), the hint feedback would flip unpredictably. So to a player, it feels like the secret is changing mid-game.
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+  - Every time something happens in your app — a user clicks a button, moves a slider, types in a text box — Streamlit reruns your entire Python script. Because the script reruns completely, any variables would get reset to their initial values on every rerun.
+  - Session state is basically a dictionary (st.session_state) that persists across reruns for a given session. Anything you store in it survives the rerun erase. This allows values to stick around until the user closes the tab or you explicitly clear it.
 - What change did you make that finally gave the game a stable secret number?
+  - This wasn't one of the 2-3 issues I discovered and decided to tackle.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
-- What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
+- What is one habit or strategy from this project that you want to reuse in future labs or projects (this could be a testing habit, a prompting strategy, or a way you used Git.)
+  - Asking Claude to explain why a feature is behaving a certain way
 - What is one thing you would do differently next time you work with AI on a coding task?
+  - In the case of a project like this, I would ask it to do a thorough search of all the issues
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  - I've used AI generated code extensively, so I can't say this project has changed how I think about it.

@@ -7,26 +7,32 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - What did the game look like the first time you ran it?
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
-  * The hints were backwards -> If you guess "1", it tells you to go lower, and if you guess "100", it tells you to go higher
-  * Guessing outside the bounds is still accepted -> uses a guess and adds number to history
-  * When I click "new Game", the attempts and secret number correctly reset, but I can't guess any new numbers (it doesn't register my attempts)
+  - The hints were backwards -> If you guess "1", it tells you to go lower, and if you guess "100", it tells you to go higher
+  - Guessing outside the bounds is still accepted -> uses a guess and adds number to history
+  - When I click "new Game", the attempts and secret number correctly reset, but I can't guess any new numbers (it doesn't register my attempts)
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+  - Claude Code
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+  - Claude suggested to swap the "Go HIGHER!" / "Go LOWER!" strings
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+  - Claude didn't give any suggestions that were misleading
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+  - I re-ran the streamlit app and tested the same actions again, this time receiving the expected results
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+  - I input numbers -1, 0, and 1, along with 99, 100, and 101 as guesses and received the expected output for each
 - Did AI help you design or understand any tests? How?
+  - Yes, it helped design my tests for me, and helped me understand the structure and keywords
 
 ---
 
